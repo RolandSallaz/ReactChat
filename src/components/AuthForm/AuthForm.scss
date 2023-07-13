@@ -1,0 +1,9 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  margin: auto auto;
+  .auth-form__submit-button {
+    height: 35px;
+  }
+}
