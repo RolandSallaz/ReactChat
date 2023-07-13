@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './AuthForm.scss'
-function AuthForm(props) {
+function AuthForm() {
     enum AuthEnum {
         LOGIN='Войти',
         REGISTER='Зарегистрироваться'
@@ -12,10 +12,11 @@ function AuthForm(props) {
     }
     return (
         <form className='auth-form'>
-            <input/>
-            <input/>
-            <button type='submit' className={'auth-form__submit-button'}>{AuthState}</button>
-            <button type='button' onClick={handleChangeAuthState}>{AuthState === AuthEnum.LOGIN ? 'Еще не зарегистрированы? Зарегистрироваться' : 'Уже зарегистрированы? Войт и в аккаунт'}</button>
+            <h1 className='heading'>ReactChat</h1>
+            <input placeholder='Имя' className={'input'}/>
+            <input placeholder='Пароль' type='password' className={'input'}/>
+            <button type='submit' className={'submit-button'}>{AuthState}</button>
+            <button type='button' className={'toggle-button'} onClick={handleChangeAuthState}>{AuthState === AuthEnum.LOGIN ? 'Еще не зарегистрированы? Зарегистрироваться' : 'Уже зарегистрированы? Войти в аккаунт'}</button>
         </form>
     );
 }

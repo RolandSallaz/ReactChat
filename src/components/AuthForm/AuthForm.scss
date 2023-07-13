@@ -2,8 +2,30 @@
   display: flex;
   flex-direction: column;
   max-width: 650px;
-  margin: auto auto;
-  .auth-form__submit-button {
+  margin: 15% auto auto auto;
+  .heading{
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+  }
+  .submit-button {
     height: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+  }
+  .toggle-button{
+    border:none;
+    background: none;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .input{
+    height: 30px;
+    border-radius: 5px;
+    margin: 0;
+    margin-top: 10px;
   }
 }
