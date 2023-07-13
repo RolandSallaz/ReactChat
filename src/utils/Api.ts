@@ -6,7 +6,7 @@ const checkResponse = <T>(res: Response): Promise<T> => {
     return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
 };
 
-export function auth(url: string, data: IAuthUser){
+export function auth(url: 'login' | 'register', data: IAuthUser) {
     return fetch(`${API_URL}/auth/${url}`, {
         method: 'POST',
         headers: {

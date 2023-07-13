@@ -4,10 +4,10 @@ import {AuthEnum} from "../../utils/enums";
 import {IAuthUser} from "../../types";
 
 interface IAuthFormProps {
-    OnAuth: (method: AuthEnum, data: IAuthUser) => void
+    onAuth: (method: 'login' | 'register', data: IAuthUser) => void
 }
 
-function AuthForm(props) {
+function AuthForm(props:IAuthFormProps) {
     const [AuthState, setAuthState] = useState<AuthEnum>(AuthEnum.LOGIN)
     const [inputData, setInputData] = useState<IAuthUser>({
         name:'',
@@ -17,14 +17,14 @@ function AuthForm(props) {
         setAuthState((prev)=> AuthEnum.LOGIN === prev ? AuthEnum.REGISTER : AuthEnum.LOGIN)
     }
 
-    function handleFormSubmit(e) {
+    function handleFormSubmit(e:React.SyntheticEvent) {
         e.preventDefault()
         props.onAuth(AuthState === AuthEnum.LOGIN ? 'login' : 'register', inputData)
     }
 
-    function handleChange(e) {
-        const name = e.target.name;
-        const value = e.target.value;
+    function handleChange(e:React.FormEvent<HTMLInputElement>) {
+        const name = e.currentTarget.name;
+        const value = e.currentTarget.value;
         setInputData((prev)=> ({...prev,[name]:value}))
     }
 
