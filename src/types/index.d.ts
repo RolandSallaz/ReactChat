@@ -4,5 +4,5 @@ export interface IAuthUser {
 }
 
 export interface IAuthToken {
-
+    token: string,
 }

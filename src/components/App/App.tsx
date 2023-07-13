@@ -1,12 +1,14 @@
 import './App.scss'
 import AuthForm from "../AuthForm/AuthForm";
 import {auth} from "../../utils/Api";
-import {IAuthUser} from "../../types";
+import {IAuthToken, IAuthUser} from "../../types";
 
 function App() {
     function onAuth(method: 'login' | 'register', data: IAuthUser) {
         auth(method, data)
-            .then(console.log)
+            .then(({token}: IAuthToken) => {
+                localStorage.setItem('token', `Bearer ${token}`)
+            })
             .catch(console.log)
     }
 
