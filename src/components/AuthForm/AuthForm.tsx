@@ -13,8 +13,8 @@ function AuthForm() {
     return (
         <form className='auth-form'>
             <h1 className='heading'>ReactChat</h1>
-            <input placeholder='Имя' className={'input'}/>
-            <input placeholder='Пароль' type='password' className={'input'}/>
+            <input placeholder='Имя' className={'input'} minLength={2} name={'name'}/>
+            <input placeholder='Пароль' type='password' className={'input'} minLength={8} name={'password'}/>
             <button type='submit' className={'submit-button'}>{AuthState}</button>
             <button type='button' className={'toggle-button'} onClick={handleChangeAuthState}>{AuthState === AuthEnum.LOGIN ? 'Еще не зарегистрированы? Зарегистрироваться' : 'Уже зарегистрированы? Войти в аккаунт'}</button>
         </form>
