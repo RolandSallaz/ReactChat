@@ -1,7 +1,7 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  max-width: 650px;
+  width: 400px;
   margin: 15% auto auto auto;
   .heading{
     text-align: center;
@@ -9,16 +9,20 @@
     margin: 0;
   }
   .submit-button {
+    margin-top: 10px;
     height: 35px;
     border-radius: 5px;
     border: none;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 5px #69b3ff;
+    font-size: 17px;
+    font-weight: 400;
   }
   .toggle-button{
     border:none;
     background: none;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 400;
     margin-top: 10px;
     cursor: pointer;
   }
@@ -27,5 +31,6 @@
     border-radius: 5px;
     margin: 0;
     margin-top: 10px;
+    border-color: #69b3ff;
   }
 }
