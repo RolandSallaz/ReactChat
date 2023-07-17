@@ -1,12 +1,5 @@
-// @flow
-import * as React from 'react';
-
-type Props = {};
-
-export function MainPage(props: Props) {
+export function MainPage() {
     return (
-        <h1>
-            helloWorld
-        </h1>
+       true
     );
 };
