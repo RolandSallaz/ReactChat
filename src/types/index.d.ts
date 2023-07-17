@@ -6,3 +6,8 @@ export interface IAuthUser {
 export interface IAuthToken {
     token: string,
 }
+
+export interface IUser {
+    name: string,
+    id: number,
+}

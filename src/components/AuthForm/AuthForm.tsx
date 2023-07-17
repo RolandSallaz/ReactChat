@@ -13,6 +13,9 @@ function AuthForm(props:IAuthFormProps) {
         name:'',
         password:''
     })
+
+    const disabledSubmitButton = Boolean((inputData.name.length < 2 || inputData.name.length > 32) || inputData.password.length < 8);
+
     function handleChangeAuthState(){
         setAuthState((prev)=> AuthEnum.LOGIN === prev ? AuthEnum.REGISTER : AuthEnum.LOGIN)
     }
@@ -33,7 +36,7 @@ function AuthForm(props:IAuthFormProps) {
             <h1 className='heading'>ReactChat</h1>
             <input placeholder='Имя' className={'input'} minLength={2} name={'name'} onChange={handleChange}/>
             <input placeholder='Пароль' type='password' className={'input'} minLength={8} name={'password'} onChange={handleChange}/>
-            <button type='submit' className={'submit-button'}>{AuthState}</button>
+            <button type='submit' className={'submit-button'} disabled={disabledSubmitButton}>{AuthState}</button>
             <button type='button' className={'toggle-button'} onClick={handleChangeAuthState}>{AuthState === AuthEnum.LOGIN ? 'Еще не зарегистрированы? Зарегистрироваться' : 'Уже зарегистрированы? Войти в аккаунт'}</button>
         </form>
     );
