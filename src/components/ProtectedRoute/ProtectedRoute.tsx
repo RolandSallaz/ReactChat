@@ -9,4 +9,4 @@ type Props = {
 export function ProtectedRoute({children}: Props) {
     const loggedIn = useContext(LoggedInContext)
     return loggedIn ? <>{children}</> : <Navigate to="/auth"/>
-};
+}
