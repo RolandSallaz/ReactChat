@@ -22,6 +22,7 @@ function App() {
                 localStorage.setItem('token', token)
                 setLoggedIn(true)
                 navigate('/')
+                console.log(currentUser)
             })
             .catch(console.log)
     }
@@ -38,7 +39,7 @@ function App() {
                 setLoggedIn(false)
             })
         }
-    }, [location])
+    }, [])
     return (
         <LoggedInContext.Provider value={loggedIn}>
             <main className='main'>

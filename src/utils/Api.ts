@@ -1,6 +1,6 @@
 import {IAuthToken, IAuthUser, IUser} from "../types";
 
-const API_URL = 'https://uninterested-calf-gilet.cyclic.app'
+const API_URL = import.meta.env.VITE_API_URL || 'http://serveo.net:3000'
 
 const checkResponse = <T>(res: Response): Promise<T> => {
     return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
