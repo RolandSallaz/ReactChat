@@ -10,4 +10,5 @@ export interface IAuthToken {
 export interface IUser {
     name: string,
     id: number,
+    registerDate: Date
 }
