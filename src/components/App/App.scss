@@ -1,14 +1,21 @@
+body {
+  background-color: #363636;
+}
+
 #root {
   margin: 0 auto;
-  width: 100%;
-  background-color: #1896da;
   color:white;
+  max-width: 1280px;
+  width: 100%;
+  min-width: 320px;
 }
 
 .main {
   margin: 0 auto;
-  max-width: 1280px;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
 }
+

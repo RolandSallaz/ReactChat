@@ -1,5 +1,8 @@
 import './Header.scss'
 import {IUser} from "../../types";
+import {LuAlignJustify} from "react-icons/lu";
+import {FaBeer} from "react-icons/fa";
+import {BiLogOut} from "react-icons/bi";
 
 type Props = {
     currentUser: IUser,
@@ -9,14 +12,20 @@ type Props = {
 export function Header({currentUser: {name, id, registerDate}, onSignOut}: Props) {
     const regDate = new Date(registerDate)
 
-
     return (
         <header>
-            <div className='user-profile'><h1 className='user-profile__name'>{name}</h1>
-                <p>id: {id}</p>
-                <p>{`Дата регистрации: ${regDate.getFullYear()}:${regDate.getMonth()}:${regDate.getDay()} ${regDate.getHours()}:${regDate.getMinutes()}`}</p>
+            <div className='hamburger-menu'>
+                <input id='menu__toggle' type='checkbox'/>
+                <label className='menu__button' for='menu__toggle'>
+                    <LuAlignJustify className='menu__icon'/>
+                </label>
+                <div className='menu__container'>
+                    <h1 className={'user__name'}>{name}</h1>
+                    <p className={'user__id'}>id: {id}</p>
+                    <p className={'user__redDate'}>{`Дата регистрации: ${regDate.getFullYear()}:${regDate.getMonth()}:${regDate.getDay()} ${regDate.getHours()}:${regDate.getMinutes()}`}</p>
+                    <button onClick={onSignOut} className='logout-button'>Выйти <BiLogOut className={{marginTop:'2px', fontSize:'30px'}}/></button>
+                </div>
             </div>
-            <button onClick={onSignOut}>Выйти</button>
         </header>
     );
-};
+}
