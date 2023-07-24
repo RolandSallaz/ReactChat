@@ -1,7 +1,6 @@
 import './Header.scss'
 import {IUser} from "../../types";
 import {LuAlignJustify} from "react-icons/lu";
-import {FaBeer} from "react-icons/fa";
 import {BiLogOut} from "react-icons/bi";
 
 type Props = {
@@ -16,7 +15,7 @@ export function Header({currentUser: {name, id, registerDate}, onSignOut}: Props
         <header>
             <div className='hamburger-menu'>
                 <input id='menu__toggle' type='checkbox'/>
-                <label className='menu__button' for='menu__toggle'>
+                <label className='menu__button' htmlFor='menu__toggle'>
                     <LuAlignJustify className='menu__icon'/>
                 </label>
                 <div className='menu__container'>

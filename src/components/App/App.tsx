@@ -12,7 +12,7 @@ import {Header} from "../Header/Header";
 const emptyUser = {
     name: 'User',
     id: 0,
-    registerDate: null
+    registerDate: new Date()
 }
 
 function App() {
