@@ -1,3 +1,5 @@
+@import '../../utils/cssVariables';
+
 header {
   display: flex;
 }
@@ -39,6 +41,7 @@ header {
     height: 26px;
     cursor: pointer;
     z-index: 1;
+    box-shadow: 2px 3px 4px -2px $shadowColor;
     @media  screen and (max-width: 1279px) {
       & {
         margin-right: 30px;

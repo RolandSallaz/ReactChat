@@ -1,6 +1,6 @@
 import {IAuthToken, IAuthUser, IUser} from "../types";
 
-const API_URL = import.meta.env.DEV ? 'http://localhost:3000' : 'https://luctus.serveo.net'
+const API_URL = import.meta.env.DEV ? 'http://localhost:3000' : 'https://nest-project-iota.vercel.app'
 
 const checkResponse = <T>(res: Response): Promise<T> => {
     return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
