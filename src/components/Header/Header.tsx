@@ -1,11 +1,11 @@
 import './Header.scss'
 import {IUser} from "../../types";
 import {LuAlignJustify} from "react-icons/lu";
-import {BiLogOut} from "react-icons/bi";
+import {BiLogOut, BiX} from "react-icons/bi";
 
 type Props = {
     currentUser: IUser,
-    onSignOut: ()=>void
+    onSignOut: () => void
 };
 
 export function Header({currentUser: {name, id, registerDate}, onSignOut}: Props) {
@@ -17,12 +17,15 @@ export function Header({currentUser: {name, id, registerDate}, onSignOut}: Props
                 <input id='menu__toggle' type='checkbox'/>
                 <label className='menu__button' htmlFor='menu__toggle'>
                     <LuAlignJustify className='menu__icon'/>
+                    <BiX className='menu__icon menu__icon_close'/>
                 </label>
                 <div className='menu__container'>
                     <h1 className={'user__name'}>{name}</h1>
                     <p className={'user__id'}>id: {id}</p>
-                    <p className={'user__redDate'}>{`Дата регистрации: ${regDate.getFullYear()}:${regDate.getMonth()}:${regDate.getDay()} ${regDate.getHours()}:${regDate.getMinutes()}`}</p>
-                    <button onClick={onSignOut} className='logout-button'>Выйти <BiLogOut className={{marginTop:'2px', fontSize:'30px'}}/></button>
+                    <p style={{whiteSpace: 'nowrap'}}
+                       className={'user__redDate'}>{`Дата регистрации: ${regDate.getFullYear()}:${regDate.getMonth()}:${regDate.getDay()} ${regDate.getHours()}:${regDate.getMinutes()}`}</p>
+                    <button onClick={onSignOut} className='logout-button'>Выйти <BiLogOut
+                        className={{marginTop: '2px', fontSize: '30px'}}/></button>
                 </div>
             </div>
         </header>

@@ -16,7 +16,7 @@ const emptyUser = {
 }
 
 function App() {
-    const [loggedIn, setLoggedIn] = useState<boolean>(false)
+    const [loggedIn, setLoggedIn] = useState<boolean>(true)
     const [currentUser, setCurrentUser] = useState<IUser>(emptyUser)
     const navigate = useNavigate();
 

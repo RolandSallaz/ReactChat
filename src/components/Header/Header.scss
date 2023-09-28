@@ -1,17 +1,17 @@
-@import '../../utils/cssVariables';
+@import '../../utils/variables';
 
 header {
   display: flex;
 }
 
 .hamburger-menu {
-  margin:0 0 0 auto;
+  margin: 0 0 0 auto;
 }
 
-.logout-button{
+.logout-button {
   border: none;
   background: none;
-  color:white;
+  color: white;
   font-size: 20px;
   padding: 0;
   cursor: pointer;
@@ -19,57 +19,69 @@ header {
   align-items: center;
 }
 
-.user{
-  &__name, &__id, &__redDate{
-    font-size: calc( (100vw - 50rem)/50 * 0.5 + 1rem);
-    margin:0;
+.user {
+  &__name, &__id, &__redDate {
+    font-size: calc((100vw - 50rem) / 50 * 0.5 + 1rem);
+    margin: 0;
     margin-bottom: 6px;
   }
 }
 
 .menu {
   &__container {
-    margin-right: 30px;
+    transition: all 0.2s linear;
+    width: 0;
+    overflow: hidden;
     visibility: hidden;
   }
 
   &__button {
-    margin:0 0 0 auto;
+    margin: 0 0 0 auto;
     display: flex;
     align-items: center;
     width: 26px;
     height: 26px;
     cursor: pointer;
     z-index: 1;
-    box-shadow: 2px 3px 4px -2px $shadowColor;
-    @media  screen and (max-width: 1279px) {
+    @media screen and (max-width: 1279px) {
       & {
         margin-right: 30px;
       }
     }
   }
 
-  &__icon{
+  &__icon {
     font-size: 30px;
+    transition: all 0.2s linear;
+
+    &_close {
+      display: none;
+    }
   }
 }
 
 #menu__toggle {
-  opacity: 0;
+  visibility: hidden;
 
   &:checked {
-    & ~ .menu__button > span {
-      transform: rotate(45deg);
+    & ~ .menu__button > .menu__icon {
+      display: none;
+
+      &_close {
+        display: block;
+      }
     }
 
-    & ~ .menu__button > span::before {
+    & ~ .menu__button > .menu__icon::before {
       top: 0;
       transform: rotate(0);
     }
 
     & ~ .menu__container {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 450px;
       visibility: visible;
-      left: 0;
     }
   }
 }
